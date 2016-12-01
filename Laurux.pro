@@ -3,7 +3,8 @@ QT += qml quick multimedia
 CONFIG += c++11
 
 SOURCES += main.cpp \
-    src/settings.cpp
+    src/settings.cpp \
+    src/model/colormodel.cpp
 
 RESOURCES += qml.qrc
 
@@ -21,4 +22,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    src/settings.h
+    src/settings.h \
+    src/model/colormodel.h
+
+DISTFILES += \
+    qml/qmldir
