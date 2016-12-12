@@ -94,5 +94,6 @@
         <file>icons/msg_t.gif</file>
         <file>icons/Tauxmo.png</file>
         <file>icons/tip1.png</file>
+        <file>qml/Parameters.qml</file>
     </qresource>
 </RCC>

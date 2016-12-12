@@ -27,6 +27,7 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty ("Btns", &Btns);
 
     engine.load(QUrl(QLatin1String("qrc:/qml/Main.qml")));
+//    engine.load(QUrl(QLatin1String("qrc:/qml/Parameters.qml")));
     int ret = app.exec();
     delete app_settings;
     return ret;

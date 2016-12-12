@@ -11,7 +11,8 @@ RESOURCES += qml.qrc
 TRANSLATIONS += laurux_fr.ts
 
 OTHER_FILES += \
-    qml/Main.qml
+    qml/Main.qml \
+    qml/Parameters.qml
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
