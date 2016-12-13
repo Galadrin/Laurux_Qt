@@ -95,5 +95,8 @@
         <file>icons/Tauxmo.png</file>
         <file>icons/tip1.png</file>
         <file>qml/Parameters.qml</file>
+        <file>qml/Preferences.qml</file>
+        <file>qml/assets/LCheckBoxStyle.qml</file>
+        <file>qml/assets/LToolTip.qml</file>
     </qresource>
 </RCC>

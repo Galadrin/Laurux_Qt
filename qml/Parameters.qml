@@ -6,6 +6,7 @@ import QtQuick.Controls 1.4
 import QtQuick.Controls.Styles 1.4
 import QtQml.Models 2.2
 import Qt.labs.settings 1.0
+import "assets"
 
 Window {
 
@@ -14,10 +15,10 @@ Window {
     id: parameter_window
     visible: true
     property int facteur_taille: 7
-    width: 111 * facteur_taille
-    height: 73 * facteur_taille
-    minimumWidth: 111 * facteur_taille
-    minimumHeight: 73 * facteur_taille
+    width: 115 * facteur_taille
+    height: 75 * facteur_taille
+    minimumWidth: 115 * facteur_taille
+    minimumHeight: 75 * facteur_taille
     title: qsTr("Table des paramètres")
 
     GridLayout {
@@ -58,21 +59,9 @@ Window {
             Layout.maximumWidth: 12.2857 * facteur_taille
             Layout.maximumHeight: 3 * facteur_taille
             placeholderText: qsTr("jj.mm.aaaa")
-            ToolTip.text: qsTr("Saisir la date sous la forme jj.mm.aaaa")
-            ToolTip.delay: 1000
-            ToolTip.timeout: 5000
-
+            LToolTip{ text: qsTr("Saisir la date sous la forme jj.mm.aaaa")}
             inputMask: "DD.DD.DDDD"
             horizontalAlignment: TextInput.AlignHCenter
-            ToolTip.visible: hovered
-            property bool hovered: false
-            MouseArea {
-                anchors.fill: parent
-                hoverEnabled: true
-                onEntered: parent.hovered = true
-                onExited: parent.hovered = false
-                onClicked: parent.focus = true
-            }
         }
 
 
@@ -91,21 +80,9 @@ Window {
             Layout.maximumWidth: 12.2857 * facteur_taille
             Layout.maximumHeight: 3 * facteur_taille
             placeholderText: qsTr("jj.mm.aaaa")
-            ToolTip.text: qsTr("Saisir la date sous la forme jj.mm.aaaa")
-            ToolTip.delay: 1000
-            ToolTip.timeout: 5000
-
+            LToolTip{ text: qsTr("Saisir la date sous la forme jj.mm.aaaa")}
             inputMask: "DD.DD.DDDD"
             horizontalAlignment: TextInput.AlignHCenter
-            ToolTip.visible: hovered
-            property bool hovered: false
-            MouseArea {
-                anchors.fill: parent
-                hoverEnabled: true
-                onEntered: parent.hovered = true
-                onExited: parent.hovered = false
-                onClicked: parent.focus = true
-            }
         }
 
         Label {
@@ -123,21 +100,9 @@ Window {
             Layout.maximumWidth: 12.2857 * facteur_taille
             Layout.maximumHeight: 3 * facteur_taille
             placeholderText: qsTr("jj.mm.aaaa")
-            ToolTip.text: qsTr("Saisir la date sous la forme jj.mm.aaaa")
-            ToolTip.delay: 1000
-            ToolTip.timeout: 5000
-
+            LToolTip{ text: qsTr("Saisir la date sous la forme jj.mm.aaaa")}
             inputMask: "DD.DD.DDDD"
             horizontalAlignment: TextInput.AlignHCenter
-            ToolTip.visible: hovered
-            property bool hovered: false
-            MouseArea {
-                anchors.fill: parent
-                hoverEnabled: true
-                onEntered: parent.hovered = true
-                onExited: parent.hovered = false
-                onClicked: parent.focus = true
-            }
         }
 
         Label {
@@ -155,21 +120,9 @@ Window {
             Layout.maximumWidth: 12.2857 * facteur_taille
             Layout.maximumHeight: 3 * facteur_taille
             placeholderText: qsTr("jj.mm.aaaa")
-            ToolTip.text: qsTr("Saisir la date sous la forme jj.mm.aaaa")
-            ToolTip.delay: 1000
-            ToolTip.timeout: 5000
-
+            LToolTip{ text: qsTr("Saisir la date sous la forme jj.mm.aaaa")}
             inputMask: "DD.DD.DDDD"
             horizontalAlignment: TextInput.AlignHCenter
-            ToolTip.visible: hovered
-            property bool hovered: false
-            MouseArea {
-                anchors.fill: parent
-                hoverEnabled: true
-                onEntered: parent.hovered = true
-                onExited: parent.hovered = false
-                onClicked: parent.focus = true
-            }
         }
 
         Label {
@@ -187,21 +140,9 @@ Window {
             Layout.maximumWidth: 12.2857 * facteur_taille
             Layout.maximumHeight: 3 * facteur_taille
             placeholderText: qsTr("jj.mm.aaaa")
-            ToolTip.text: qsTr("Saisir la date sous la forme jj.mm.aaaa")
-            ToolTip.delay: 1000
-            ToolTip.timeout: 5000
-
+            LToolTip{ text: qsTr("Saisir la date sous la forme jj.mm.aaaa")}
             inputMask: "DD.DD.DDDD"
             horizontalAlignment: TextInput.AlignHCenter
-            ToolTip.visible: hovered
-            property bool hovered: false
-            MouseArea {
-                anchors.fill: parent
-                hoverEnabled: true
-                onEntered: parent.hovered = true
-                onExited: parent.hovered = false
-                onClicked: parent.focus = true
-            }
         }
 
         Label {
@@ -219,21 +160,9 @@ Window {
             Layout.maximumWidth: 12.2857 * facteur_taille
             Layout.maximumHeight: 3 * facteur_taille
             placeholderText: qsTr("jj.mm.aaaa")
-            ToolTip.text: qsTr("Saisir la date sous la forme jj.mm.aaaa")
-            ToolTip.delay: 1000
-            ToolTip.timeout: 5000
-
+            LToolTip{ text: qsTr("Saisir la date sous la forme jj.mm.aaaa")}
             inputMask: "DD.DD.DDDD"
             horizontalAlignment: TextInput.AlignHCenter
-            ToolTip.visible: hovered
-            property bool hovered: false
-            MouseArea {
-                anchors.fill: parent
-                hoverEnabled: true
-                onEntered: parent.hovered = true
-                onExited: parent.hovered = false
-                onClicked: parent.focus = true
-            }
         }
 
 
@@ -252,21 +181,9 @@ Window {
             Layout.maximumWidth: 12.2857 * facteur_taille
             Layout.maximumHeight: 3 * facteur_taille
             placeholderText: qsTr("jj.mm.aaaa")
-            ToolTip.text: qsTr("Saisir la date sous la forme jj.mm.aaaa")
-            ToolTip.delay: 1000
-            ToolTip.timeout: 5000
-
+            LToolTip{ text: qsTr("Saisir la date sous la forme jj.mm.aaaa")}
             inputMask: "DD.DD.DDDD"
             horizontalAlignment: TextInput.AlignHCenter
-            ToolTip.visible: hovered
-            property bool hovered: false
-            MouseArea {
-                anchors.fill: parent
-                hoverEnabled: true
-                onEntered: parent.hovered = true
-                onExited: parent.hovered = false
-                onClicked: parent.focus = true
-            }
         }
 
         Label {
@@ -284,20 +201,9 @@ Window {
             Layout.maximumWidth: 12.2857 * facteur_taille
             Layout.maximumHeight: 3 * facteur_taille
             placeholderText: qsTr("jj.mm.aaaa")
-            ToolTip.text: qsTr("Saisir la date sous la forme jj.mm.aaaa")
-            ToolTip.delay: 1000
-            ToolTip.timeout: 5000
-
+            LToolTip{ text: qsTr("Saisir la date sous la forme jj.mm.aaaa")}
             inputMask: "DD.DD.DDDD"
             horizontalAlignment: TextInput.AlignHCenter
-            ToolTip.visible: hovered
-            property bool hovered: false
-            MouseArea {
-                anchors.fill: parent
-                onEntered: parent.hovered = true
-                onExited: parent.hovered = false
-                onClicked: parent.focus = true
-            }
         }
 
         Label {
@@ -315,21 +221,9 @@ Window {
             Layout.maximumWidth: 12.2857 * facteur_taille
             Layout.maximumHeight: 3 * facteur_taille
             placeholderText: qsTr("jj.mm.aaaa")
-            ToolTip.text: qsTr("Saisir la date sous la forme jj.mm.aaaa")
-            ToolTip.delay: 1000
-            ToolTip.timeout: 5000
-
+            LToolTip{ text: qsTr("Saisir la date sous la forme jj.mm.aaaa")}
             inputMask: "DD.DD.DDDD"
             horizontalAlignment: TextInput.AlignHCenter
-            ToolTip.visible: hovered
-            property bool hovered: false
-            MouseArea {
-                anchors.fill: parent
-                hoverEnabled: true
-                onEntered: parent.hovered = true
-                onExited: parent.hovered = false
-                onClicked: parent.focus = true
-            }
         }
 
         Label {
@@ -436,21 +330,10 @@ Window {
             Layout.column: 1
             Layout.maximumWidth: 12.2857 * facteur_taille
             Layout.maximumHeight: 3 * facteur_taille
-            ToolTip.text: qsTr("Longueur sur 8 caractères maximum\nNe pas utiliser de symbole SVP.")
-            ToolTip.delay: 1000
-            ToolTip.timeout: 5000
+            LToolTip{ text: qsTr("Longueur sur 8 caractères maximum\nNe pas utiliser de symbole SVP.")}
 
             inputMask: "nnnnnnnn"
             horizontalAlignment: TextInput.AlignHCenter
-            ToolTip.visible: hovered
-            property bool hovered: false
-            MouseArea {
-                anchors.fill: parent
-                hoverEnabled: true
-                onEntered: parent.hovered = true
-                onExited: parent.hovered = false
-                onClicked: parent.focus = true
-            }
         }
 
         // second column definition
@@ -562,20 +445,9 @@ Window {
             Layout.column: 3
             Layout.maximumWidth: 12.2857 * facteur_taille
             Layout.maximumHeight: 3 * facteur_taille
-            ToolTip.text: qsTr("Doit être créé dans la table des journaux.")
-            ToolTip.delay: 1000
-            ToolTip.timeout: 5000
+            LToolTip{ text: qsTr("Doit être créé dans la table des journaux.")}
             inputMask: "00"
             horizontalAlignment: TextInput.AlignHCenter
-            ToolTip.visible: hovered
-            property bool hovered: false
-            MouseArea {
-                anchors.fill: parent
-                hoverEnabled: true
-                onEntered: parent.hovered = true
-                onExited: parent.hovered = false
-                onClicked: parent.focus = true
-            }
         }
 
         Label {
@@ -592,20 +464,9 @@ Window {
             Layout.column: 3
             Layout.maximumWidth: 12.2857 * facteur_taille
             Layout.maximumHeight: 3 * facteur_taille
-            ToolTip.text: qsTr("Doit être créé dans la table des journaux.")
-            ToolTip.delay: 1000
-            ToolTip.timeout: 5000
+            LToolTip{ text: qsTr("Doit être créé dans la table des journaux.")}
             inputMask: "00"
             horizontalAlignment: TextInput.AlignHCenter
-            ToolTip.visible: hovered
-            property bool hovered: false
-            MouseArea {
-                anchors.fill: parent
-                hoverEnabled: true
-                onEntered: parent.hovered = true
-                onExited: parent.hovered = false
-                onClicked: parent.focus = true
-            }
         }
 
         Label {
@@ -622,20 +483,9 @@ Window {
             Layout.column: 3
             Layout.maximumWidth: 12.2857 * facteur_taille
             Layout.maximumHeight: 3 * facteur_taille
-            ToolTip.text: qsTr("Ce compte doit exister dans la table des comptes.\nLes règlements par carte seront ventilés dans ce compte")
-            ToolTip.delay: 1000
-            ToolTip.timeout: 5000
+            LToolTip{ text: qsTr("Ce compte doit exister dans la table des comptes.\nLes règlements par carte seront ventilés dans ce compte")}
             inputMask: "00000000"
             horizontalAlignment: TextInput.AlignHCenter
-            ToolTip.visible: hovered
-            property bool hovered: false
-            MouseArea {
-                anchors.fill: parent
-                hoverEnabled: true
-                onEntered: parent.hovered = true
-                onExited: parent.hovered = false
-                onClicked: parent.focus = true
-            }
         }
 
         Label {
@@ -652,20 +502,9 @@ Window {
             Layout.column: 3
             Layout.maximumWidth: 12.2857 * facteur_taille
             Layout.maximumHeight: 3 * facteur_taille
-            ToolTip.text: qsTr("Ce compte doit exister dans la table des comptes.\nLes règlements par carte seront ventilés dans ce compte")
-            ToolTip.delay: 1000
-            ToolTip.timeout: 5000
+            LToolTip{ text: qsTr("Ce compte doit exister dans la table des comptes.\nLes règlements par carte seront ventilés dans ce compte")}
             inputMask: "00000000"
             horizontalAlignment: TextInput.AlignHCenter
-            ToolTip.visible: hovered
-            property bool hovered: false
-            MouseArea {
-                anchors.fill: parent
-                hoverEnabled: true
-                onEntered: parent.hovered = true
-                onExited: parent.hovered = false
-                onClicked: parent.focus = true
-            }
         }
 
         Label {
@@ -682,20 +521,9 @@ Window {
             Layout.column: 3
             Layout.maximumWidth: 12.2857 * facteur_taille
             Layout.maximumHeight: 3 * facteur_taille
-            ToolTip.text: qsTr("Ce compte doit exister dans la table des comptes.\nLes règlements par carte seront ventilés dans ce compte")
-            ToolTip.delay: 1000
-            ToolTip.timeout: 5000
+            LToolTip{ text: qsTr("Ce compte doit exister dans la table des comptes.\nLes règlements par carte seront ventilés dans ce compte")}
             inputMask: "00000000"
             horizontalAlignment: TextInput.AlignHCenter
-            ToolTip.visible: hovered
-            property bool hovered: false
-            MouseArea {
-                anchors.fill: parent
-                hoverEnabled: true
-                onEntered: parent.hovered = true
-                onExited: parent.hovered = false
-                onClicked: parent.focus = true
-            }
         }
 
         Label {
@@ -712,20 +540,9 @@ Window {
             Layout.column: 3
             Layout.maximumWidth: 12.2857 * facteur_taille
             Layout.maximumHeight: 3 * facteur_taille
-            ToolTip.text: qsTr("Doit être créé dans la table des journaux.")
-            ToolTip.delay: 1000
-            ToolTip.timeout: 5000
+            LToolTip{ text: qsTr("Doit être créé dans la table des journaux.")}
             inputMask: "00"
             horizontalAlignment: TextInput.AlignHCenter
-            ToolTip.visible: hovered
-            property bool hovered: false
-            MouseArea {
-                anchors.fill: parent
-                hoverEnabled: true
-                onEntered: parent.hovered = true
-                onExited: parent.hovered = false
-                onClicked: parent.focus = true
-            }
         }
 
         Label {
@@ -742,20 +559,9 @@ Window {
             Layout.column: 3
             Layout.maximumWidth: 12.2857 * facteur_taille
             Layout.maximumHeight: 3 * facteur_taille
-            ToolTip.text: qsTr("Saisir le mois en cours sous la forme mm.aaaa")
-            ToolTip.delay: 1000
-            ToolTip.timeout: 5000
+            LToolTip{ text: qsTr("Saisir le mois en cours sous la forme mm.aaaa")}
             inputMask: "00.0000"
             horizontalAlignment: TextInput.AlignHCenter
-            ToolTip.visible: hovered
-            property bool hovered: false
-            MouseArea {
-                anchors.fill: parent
-                hoverEnabled: true
-                onEntered: parent.hovered = true
-                onExited: parent.hovered = false
-                onClicked: parent.focus = true
-            }
         }
 
         Label {
@@ -772,20 +578,9 @@ Window {
             Layout.column: 3
             Layout.maximumWidth: 12.2857 * facteur_taille
             Layout.maximumHeight: 3 * facteur_taille
-            ToolTip.text: qsTr("Saisir le mois en cours sous la forme mm.aaaa")
-            ToolTip.delay: 1000
-            ToolTip.timeout: 5000
+            LToolTip{ text: qsTr("Saisir le mois en cours sous la forme mm.aaaa")}
             inputMask: "00.0000"
             horizontalAlignment: TextInput.AlignHCenter
-            ToolTip.visible: hovered
-            property bool hovered: false
-            MouseArea {
-                anchors.fill: parent
-                hoverEnabled: true
-                onEntered: parent.hovered = true
-                onExited: parent.hovered = false
-                onClicked: parent.focus = true
-            }
         }
 
         Label {
@@ -802,20 +597,9 @@ Window {
             Layout.column: 3
             Layout.maximumWidth: 12.2857 * facteur_taille
             Layout.maximumHeight: 3 * facteur_taille
-            ToolTip.text: qsTr("Doit être créé dans la table des journaux.")
-            ToolTip.delay: 1000
-            ToolTip.timeout: 5000
+            LToolTip{ text: qsTr("Doit être créé dans la table des journaux.")}
             inputMask: "00"
             horizontalAlignment: TextInput.AlignHCenter
-            ToolTip.visible: hovered
-            property bool hovered: false
-            MouseArea {
-                anchors.fill: parent
-                hoverEnabled: true
-                onEntered: parent.hovered = true
-                onExited: parent.hovered = false
-                onClicked: parent.focus = true
-            }
         }
 
         Label {
@@ -832,59 +616,29 @@ Window {
             Layout.column: 3
             Layout.maximumWidth: 12.2857 * facteur_taille
             Layout.maximumHeight: 3 * facteur_taille
-            ToolTip.text: qsTr("Doit être créé dans la table des journaux.")
-            ToolTip.delay: 1000
-            ToolTip.timeout: 5000
-            ToolTip.visible: hovered
+            LToolTip{ text: qsTr("Doit être créé dans la table des journaux.")}
             inputMask: "00"
             horizontalAlignment: TextInput.AlignHCenter
-            property bool hovered: false
-            MouseArea {
-                anchors.fill: parent
-                hoverEnabled: true
-                onEntered: parent.hovered = true
-                onExited: parent.hovered = false
-                onClicked: parent.focus = true
-            }
+
         }
         CheckBox {
             id: nfacm
 
             Layout.row: 16
             Layout.column: 0
-            //            Layout.columnSpan: 4
-            //            Layout.fillHeight: false
             Layout.maximumWidth: 49 * facteur_taille
             Layout.maximumHeight: 2 * facteur_taille
 
             text: qsTr("N° de facture sous la forme AAMMXXXXXXX")
-            ToolTip.text: qsTr("A cocher si vous souhaitez avoir des numéros de facture sous la forme AAMMXXXXXX au lieu de AAAAXXXXXXX")
-            ToolTip.delay: 1000
-            ToolTip.timeout: 5000
-            ToolTip.visible: hovered
-            style: CheckBoxStyle {
-                indicator: Rectangle {
-                    implicitWidth: 16
-                    implicitHeight: 16
-                    radius: 3
-                    border.color: control.activeFocus ? "darkblue" : "gray"
-                    border.width: 1
-                    Rectangle {
-                        visible: control.checked
-                        color: "#555"
-                        border.color: "#333"
-                        radius: 1
-                        anchors.margins: 4
-                        anchors.fill: parent
-                    }
-                }
-            }
+            LToolTip{ text: qsTr("A cocher si vous souhaitez avoir des numéros de facture sous la forme AAMMXXXXXX au lieu de AAAAXXXXXXX")}
+            style: LCheckBoxStyle {}
         }
         Item {
             Layout.row: 17
             Layout.column: 0
             Layout.columnSpan: 4
             Layout.fillWidth: true
+
             implicitHeight: help.height
 
             Button {
@@ -895,12 +649,7 @@ Window {
                 height: 4.3 * facteur_taille
                 anchors.right: save.left
                 anchors.margins: 20
-                ToolTip {
-                    text: qsTr("Doc HTML")
-                    delay: 1000
-                    timeout: 5000
-                    visible: parent.hovered
-                }
+                LToolTip{ text: qsTr("Doc HTML")}
             }
             Button {
                 id: save

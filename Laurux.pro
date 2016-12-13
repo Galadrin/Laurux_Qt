@@ -27,4 +27,6 @@ HEADERS += \
     src/model/colormodel.h
 
 DISTFILES += \
-    qml/qmldir
+    qml/qmldir \
+    qml/Preferences.qml \
+    qml/assets/LCheckBoxStyle.qml
