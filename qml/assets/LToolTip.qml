@@ -18,6 +18,17 @@ Item {
         anchors.fill: parent
         hoverEnabled: true
 
+        propagateComposedEvents: true
+
+        onClicked: mouse.accepted = false;
+        onPressed: mouse.accepted = false;
+        onReleased: mouse.accepted = false;
+        onDoubleClicked: mouse.accepted = false;
+        onPositionChanged: mouse.accepted = false;
+        onPressAndHold: mouse.accepted = false;
+        property string society_group: "/Soc" + settings.value("Soc", "01") + "/"
+        enabled: settings.valueInt(society_group + "Infob", 1) === 1 ? true : false
+
         Timer {
             id:showTimer
             interval: 1000

@@ -1,66 +1,34 @@
+
 #ifndef SETTINGS_H
 #define SETTINGS_H
 
+#include <QObject>
 #include <QSettings>
-#include <QString>
-#include <QMediaPlayer>
-#include <QDir>
-#include <QColor>
-#include <QFont>
-#include <QGuiApplication>
-#include <QHash>
-#include <QPalette>
+#include <QCoreApplication>
+#include <QStringList>
 
-///
-/// \brief The LSettingStyle class
-///
-class LSettingStyle : public QObject
+class appSettings : public QSettings
 {
     Q_OBJECT
-
 public:
-    LSettingStyle(){}
-    LSettingStyle(QString styleDefinition);
-    ~LSettingStyle() {}
 
-    QColor getBackground() {return background;}
-    QFont getFont() {return font;}
-    QString getFontName();
-    qint8 getFontSize();
+    explicit appSettings(QObject *parent = 0) :
+        QSettings(
+        QSettings::IniFormat,
+        QSettings::UserScope,
+        QCoreApplication::organizationName(),
+        QCoreApplication::applicationName(),
+        parent)
+        {}
 
-    static QFont parseFont(QString fontString);
-
-private:
-    QColor background = QGuiApplication::palette().color(QPalette::Window);
-    QString fontName = QGuiApplication::font().family();
-    qint8 size = QGuiApplication::font().pointSize();
-    QFont font = QGuiApplication::font();
-};
-
-///
-/// \brief The LSettings class
-///
-class LSettings : public QObject
-{
-    Q_OBJECT
-
-public:
-    LSettings(QObject *parent = nullptr);
-    ~LSettings();
-
-    QSettings* settings;
-    QString filename;
-
-    QMediaPlayer* player;
-
-    void loadSettings();
-    Q_INVOKABLE LSettingStyle* getStyleItem(QString name);
-    Q_INVOKABLE QList<QString> getStyleList();
-
-private:
-    QString socId = QString("Soc01");
-    QString versionT = QString();
-    QHash<QString, LSettingStyle*> style_map;
+    Q_INVOKABLE inline void setValue(const QString &key, const QVariant &value) { QSettings::setValue(key, value); }
+    Q_INVOKABLE inline QVariant value(const QString &key, const QVariant &defaultValue = QVariant()) const { return QSettings::value(key, defaultValue); }
+    Q_INVOKABLE inline int valueInt(const QString &key, const QVariant &defaultValue = QVariant()) const { return QSettings::value(key, defaultValue).toInt(); }
+    Q_INVOKABLE inline void clear(void) { QSettings::clear(); }
+    Q_INVOKABLE inline void beginGroup(const QString & prefix) { QSettings::beginGroup(prefix); }
+    Q_INVOKABLE inline void endGroup(void) { QSettings::endGroup(); }
+    Q_INVOKABLE inline QStringList childKeys(void) const { return QSettings::childKeys(); }
+    Q_INVOKABLE inline QStringList childGroups(void) const { return QSettings::childGroups(); }
 };
 
 #endif // SETTINGS_H
