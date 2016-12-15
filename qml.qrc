@@ -98,5 +98,6 @@
         <file>qml/Preferences.qml</file>
         <file>qml/assets/LCheckBoxStyle.qml</file>
         <file>qml/assets/LToolTip.qml</file>
+        <file>qml/utils/desEncrypt.js</file>
     </qresource>
 </RCC>

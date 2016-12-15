@@ -4,23 +4,64 @@ import QtQuick.Layouts 1.0
 import QtQuick.Controls 2.0
 import QtQuick.Controls 1.4
 import QtQuick.Controls.Styles 1.4
-import QtQuick.Dialogs 1.1
+import QtQuick.Dialogs 1.2
 import "assets"
+import "utils/desEncrypt.js" as Crypto
 
 Window {
     id: parameter_window
     visible: true
+
     property int facteur_taille: 7
     property string society_group: "/Soc" + settings.value("Soc", "01") + "/"
+    property bool unlocked: settings.valueInt(society_group + "Admin", 0)?false:true
 
     width: 115 * facteur_taille
     height: 73 * facteur_taille
     minimumWidth: 111 * facteur_taille
     minimumHeight: 73 * facteur_taille
     title: qsTr("Préférences")
+    onWindowStateChanged: {
+        if(!unlocked){
+            console.log("ask password")
+            passwordDialog.title = qsTr("Enter Admin password")
+            passwordDialog.visible = true }
+    }
+    onUnlockedChanged: tabView.enabled = unlocked
+
+    Dialog {
+        id: passwordDialog
+        property string cipherText: ""
+        modality: Qt.WindowModal
+        standardButtons: StandardButton.Cancel | StandardButton.Apply
+        onButtonClicked: cipherText = Crypto.stringToHex(Crypto.des("Laurux", passwordEntry.text, 1, 0))
+        onApply:{
+            if(settings.valueInt(society_group + "Admin") === 0) {
+                settings.setValue(society_group + "Admin", 1)
+                settings.setValue(society_group + "MdpPrefs", cipherText)
+                visible = false
+            }
+            else if(cipherText === settings.value(society_group + "MdpPrefs")) {
+                     unlocked = true
+                     visible = false
+                 }else {
+                     unlocked = false
+                 }
+        }
+        onVisibleChanged: passwordEntry.text = ""
+
+        TextField {
+            id: passwordEntry
+            placeholderText: qsTr("mot de passe")
+            echoMode: TextInput.PasswordEchoOnEdit
+        }
+
+    }
 
     TabView {
+        id: tabView
         anchors.fill: parent
+        enabled: unlocked
 
         Tab {
             id: environment_tab
@@ -43,8 +84,18 @@ Window {
                         LToolTip{ text: qsTr("A cocher si vous souhaitez saisir un mot de passe pour acceder aux préférences, aux paramètres et à la gestion des sociétés.")}
                         style: LCheckBoxStyle {}
 
-                        onCheckedChanged: settings.setValue(society_group + "Admin", infob.checked?0:1)
-                        checked: settings.valueInt(society_group + "Admin", 0) === 0 ? true : false
+                        onCheckedChanged: if (nfacm.checked) {
+                                              console.log("set admin to 1")
+
+                                              passwordDialog.title = qsTr("Set Admin password")
+                                              passwordDialog.visible = true
+                                          } else {
+                                              console.log("set admin to 0")
+                                              settings.setValue(society_group + "Admin", 0)
+                                              settings.setValue(society_group + "MdpPrefs", "")
+                                          }
+
+                        checked: settings.valueInt(society_group + "Admin", 0) === 1 ? true : false
                     }
                     Text {
                         id: environnementTitle
@@ -189,9 +240,30 @@ Window {
                     }
                     RowLayout {
 
-                        TextField { id: image_path}
+                        TextField {
+                            id: image_path
+                            text: settings.value(society_group + "Fecran", "")
+                            onTextChanged: settings.setValue(society_group + "Fecran", text)
+                        }
                         Button {
                             text: qsTr("C&hoisir")
+                            onClicked: fileDialog.visible = true
+                        }
+                        FileDialog {
+                            id: fileDialog
+                            modality: Qt.WindowModal
+                            title: qsTr("Choix du fond d'écran")
+                            selectExisting: true
+                            selectMultiple: false
+                            selectFolder: false
+                            nameFilters: [ "Image files (*.png *.jpg)" ]
+                            selectedNameFilter: "Image files (*.png *.jpg)"
+                            sidebarVisible: true
+                            onAccepted: {
+                                console.log("Accepted: " + fileUrls)
+                                image_path.text = fileUrl
+                            }
+                            onRejected: { console.log("Rejected") }
                         }
                     }
                     Text {
@@ -224,6 +296,27 @@ Window {
         Tab {
             id: gestion_1_tab
             title: qsTr("Gestion 1")
+            RowLayout {
+                ColumnLayout {
+                    anchors.margins: 20
+                    anchors.fill: parent
+
+                    Text {
+                        id: factureParamTitle
+                        text: qsTr("Paramètres facturation")
+                        font.bold: true
+                    }
+                    CheckBox {
+                        id: slide
+
+                        text: qsTr("Activer le défilement des fonds d'écran")
+                        LToolTip{ text: qsTr("Si l'option est cochée alors le fond d'écran changera à chaque lancement de Laurux.")}
+                        style: LCheckBoxStyle {}
+                        onCheckedChanged: settings.setValue(society_group + "Slide", infob.checked?0:1)
+                        checked: settings.valueInt(society_group + "Slide", 0) === 0 ? true : false
+                    }
+                }
+            }
         }
         Tab {
             id: gestion_2_tab

@@ -1,3 +1,5 @@
+// thank's to henrythasler for the settings class
+// https://github.com/henrythasler/pwnsensor/blob/master/settings.h
 
 #ifndef SETTINGS_H
 #define SETTINGS_H

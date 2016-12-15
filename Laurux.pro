@@ -14,6 +14,7 @@ OTHER_FILES += \
     qml/Parameters.qml \
     qml/Preferences.qml \
     qml/assets/LCheckBoxStyle.qml
+    qml/assets/LTooltip.qml
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -27,7 +28,3 @@ HEADERS += \
     src/settings.h \
     src/model/colormodel.h
 
-DISTFILES += \
-    qml/qmldir \
-    qml/Preferences.qml \
-    qml/assets/LCheckBoxStyle.qml
