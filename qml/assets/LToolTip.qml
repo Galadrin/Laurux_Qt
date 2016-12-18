@@ -27,7 +27,7 @@ Item {
         onPositionChanged: mouse.accepted = false;
         onPressAndHold: mouse.accepted = false;
         property string society_group: "/Soc" + settings.value("Soc", "01") + "/"
-        enabled: settings.valueInt(society_group + "Infob", 1) === 1 ? true : false
+        enabled: settings.valueInt(society_group + "Infob", 1) === 1 ? false : true
 
         Timer {
             id:showTimer
